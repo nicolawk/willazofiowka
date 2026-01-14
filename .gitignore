@@ -1,0 +1,15 @@
+node_modules/
+build/
+dist/
+.env
+.env.*
+*.mp4
+*.mov
+*.webm
+*.mkv
+*.avi
+*.zip
+*.7z
+*.rar
+*.sqlite
+*.db

@@ -1,0 +1,67 @@
+{
+  "ad": {
+    "heading": "Przytulne i luksusowe apartamenty",
+    "explore": "Zobacz pokoje",
+    "alt": "Willa w górach"
+  },
+  "amenities": {
+    "playroom": "Pozwól najmłodszym śmiać się i bawić — kolorowy, bezpieczny pokój zabaw stworzony dla radości i wyobraźni.",
+    "sauna": "Zrelaksuj się w saunie — oczyść ciało, odpręż się i poczuj, jak ciepło usuwa całe napięcie.",
+    "jacuzzi": "Zanurz się w luksusie — nasze jacuzzi zaprasza do pełnego relaksu z widokiem na góry.",
+    "lounge": "Odpocznij i porozmawiaj w eleganckim salonie — z barem samoobsługowym, byś mógł cieszyć się ulubionym napojem o każdej porze.",
+    "alt1": "Pokój zabaw dla dzieci",
+    "alt2": "Sauna",
+    "alt3": "Jacuzzi",
+    "alt4": "Elegancki salon"
+  },
+  "reviews": {
+    "title": "CO SĄDZĄ GOŚCIE?",
+    "placeholder": "Goście uwielbiają pobyt — recenzje pojawią się wkrótce.",
+    "aria": { "nav": "nawigacja opinii" },
+    "nav": { "prev": "Poprzednia", "next": "Następna" },
+    "cta": { "title": "ZAREZERWUJ IDEALNY POBYT", "book": "Rezerwuj" }
+  },
+  "footer": {
+    "description": "Ponad dekada zaufanej gościnności krótkoterminowej w Zakopanem. Oferujemy wyjątkowy górski wypoczynek z indywidualną obsługą i ponadczasowym urokiem.",
+    "explore": {
+      "title": "Odkryj",
+      "book": "Rezerwuj",
+      "locations": "Lokalizacje",
+      "contact": "Kontakt"
+    },
+    "visit": {
+      "title": "Odwiedź nas",
+      "addressLine1": "J. I. Kraszewskiego",
+      "addressLine2": "34-500 Zakopane"
+    },
+    "bottom": {
+      "text": "Strona wykonana przez ",
+      "author": "Nicolę Wójcikowską"
+    }
+},
+  "intro": {
+    "title": "SZUKASZ MIEJSCA NA WYPOCZYNEK?",
+    "text": "Witamy w naszej willi w górach — spokojnym miejscu ukrytym w sercu natury. Oferujemy krótkoterminowe pobyty, zapewniając idealne połączenie komfortu i ciszy, otoczone zapierającymi dech w piersiach widokami lasów i majestatycznych szczytów. Niezależnie od tego, czy szukasz relaksu, czy przygody, nasze eleganckie wnętrza i indywidualna obsługa gwarantują niezapomniany pobyt. Odpocznij na tarasie, odkrywaj szlaki turystyczne lub po prostu ciesz się świeżym górskim powietrzem — Twój idealny wypoczynek czeka.",
+    "alt": "Willa w górach"
+  },
+  "maps": {
+    "enquiries": "INFOLINIA",
+    "altMap": "Mapa okolicy Zakopanego",
+    "altLogo": "Logo Willa Zofiówka"
+  },
+  "more": {
+    "title": "DLACZEGO AKURAT MY?",
+    "text": "Nasza willa w górach oferuje doświadczenie, które wykracza poza zwykły pobyt. Z zapierającymi dech w piersiach widokami, luksusowymi, a zarazem przytulnymi wnętrzami i ekologicznymi udogodnieniami — każdy detal został zaprojektowany tak, abyś mógł zanurzyć się w komforcie i pięknie. Nasz zespół zapewnia bezproblemową rezerwację, indywidualną obsługę i spersonalizowane rekomendacje, aby Twój pobyt był naprawdę wyjątkowy. Ucieknij do eleganckiego zakątka, gdzie natura, relaks i styl łączą się w doskonałej harmonii. Wybierz nas na swój górski wypoczynek i pozwól nam wznieść każdą chwilę na wyższy poziom.",
+    "alt": "Willa w górach"
+  },"nav": {
+    "offer": "Oferta",
+    "booking": "Rezerwacja",
+    "locations": "Lokalizacje",
+    "about": "O nas",
+    "reviews": "Opinie"
+},
+ "slider": {
+    "text": "Zanurz się w luksusowym i wyrafinowanym stylu życia pośród spokojnego piękna Zakopanego — jednego z najbardziej pożądanych miejsc na świecie.",
+    "alt": "Slajd {{number}}"
+  }
+}

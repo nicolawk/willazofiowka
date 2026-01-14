@@ -1,0 +1,136 @@
+.zakopane-intro-wrapper {
+  background-color: rgba(247, 243, 234, 0.85);
+  padding: 6vw 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 8vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Common Section Styles */
+.zakopane-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 4vw;
+  box-sizing: border-box;
+}
+
+.zakopane-section-content {
+  display: flex;
+  width: 100%;
+}
+
+.zakopane-text,
+.zakopane-image {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+}
+
+/* Default (non-reverse) */
+.zakopane-section:not(.reverse) .zakopane-text {
+  order: 1;
+  text-align: left;
+  padding-right: 2vw;
+}
+
+.zakopane-section:not(.reverse) .zakopane-image {
+  order: 2;
+  justify-content: flex-end;
+}
+
+/* Reverse section (image left, text right) */
+.zakopane-section.reverse .zakopane-text {
+  order: 2;
+  text-align: right;
+  padding-left: 2vw;
+}
+
+.zakopane-section.reverse .zakopane-image {
+  order: 1;
+  justify-content: flex-start;
+}
+
+/* Image */
+.zakopane-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zakopane-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Typography */
+.zakopane-heading {
+  font-family: "Domine", serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 1rem;
+}
+
+.zakopane-description {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Tablet: slightly tighter gap */
+@media screen and (max-width: 1024px) {
+  .zakopane-section {
+    gap: 3vw;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+
+  .zakopane-section {
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .zakopane-section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100%;
+  }
+
+  .zakopane-text {
+    width: 100%;
+    text-align: center !important;
+    margin-bottom: 1rem;
+  }
+
+  .zakopane-text * {
+    text-align: center !important;
+  }
+
+  .zakopane-image {
+    width: 100%;
+    display: flex;
+    justify-content: center !important;
+  }
+
+  .zakopane-image img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+  }
+}

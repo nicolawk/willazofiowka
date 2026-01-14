@@ -1,0 +1,377 @@
+/* ==== QUIET LUXURY — Minimal Alpine Alignment Edition ==== */
+:root {
+  --bg: #f8f6f2;            /* ivory paper tone */
+  --card-bg: #ffffff;
+  --text: #141413;          /* deep ink */
+  --muted: #7b7770;         /* refined taupe */
+  --line: rgba(0, 0, 0, 0.08);
+  --accent: #4b0e1f;        /* deep burgundy */
+  --accent-grad: linear-gradient(135deg, #4b0e1f 0%, #7a243a 100%);
+  --radius: 14px;
+
+  --shadow-base: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 10px 26px rgba(0, 0, 0, 0.12);
+
+  --font-heading: "Playfair Display", "Cormorant Garamond", serif;
+  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ===== SECTION ===== */
+.room-gallery-wrapper {
+  background: var(--bg);
+  padding: 96px 24px 112px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}/* force fixed width for each card */
+.room-rows {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  max-width: calc(3 * 344px + 2 * 40px);
+  margin: 0 auto;
+}
+
+/* make every card same size */
+.room-card {
+  width: 344px !important;
+  flex: 0 0 344px !important;
+  margin: 0 !important;
+}
+
+/* === PERFECT 3 + 2 CENTERING === */
+/* push 4th card to start centered row (half offset of one card + one gap/2) */
+.room-card:nth-child(4) {
+  margin-left: calc(344px / 2 + 40px / 2) !important;
+}
+
+/* tablet view (2 per row, remove offset) */
+@media (max-width: 1100px) {
+  .room-rows {
+    max-width: calc(2 * 344px + 1 * 40px);
+  }
+  .room-card:nth-child(4) {
+    margin-left: 0 !important;
+  }
+}
+
+/* mobile: 1 per row */
+@media (max-width: 640px) {
+  .room-rows {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    max-width: 360px;
+  }
+  .room-card {
+    width: 100% !important;
+  }
+  .room-card:nth-child(4) {
+    margin-left: 0 !important;
+  }
+}
+
+/* ===== ROOM CARD ===== */
+.room-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-base);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  overflow: hidden;
+}
+.room-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* ===== IMAGE ===== */
+.room-media {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+}
+.room-image-btn { all: unset; display: block; cursor: zoom-in; }
+.room-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.5s cubic-bezier(.2,.7,.2,1), filter 0.3s ease;
+}
+.room-card:hover .room-image { transform: scale(1.03); filter: brightness(0.97); }
+
+/* ===== PRICE TAG ===== */
+.room-price {
+  position: absolute;
+  left: 14px; bottom: 14px;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px;
+  font: 600 0.85rem var(--font-body);
+  color: var(--text);
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== HEADINGS ===== */
+.room-head { padding: 24px 22px 14px; }
+.room-title {
+  font-family: var(--font-heading);
+  font-weight: 600; font-size: 1.45rem; color: var(--text);
+  letter-spacing: 0.2px; line-height: 1.2; margin: 0 0 6px;
+}
+.room-location { font-family: var(--font-body); font-size: 0.96rem; color: var(--muted); }
+.room-head::after { content: ""; display: block; height: 1px; margin-top: 14px;
+  background: linear-gradient(to right, var(--line), rgba(0,0,0,0.02)); }
+
+/* ===== INFO GRID ===== */
+.room-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 18px; padding: 16px 22px 0;
+  font: 500 0.97rem var(--font-body); color: var(--text);
+  margin-bottom: auto;
+}
+.room-info div { display: inline-flex; align-items: center; gap: 8px; }
+.room-info svg { color: var(--muted); opacity: 0.85; }
+
+/* ===== BUTTON ===== */
+.room-action { display: flex; justify-content: center; padding: 18px 22px 24px; }
+.book-now-btn {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+  font: 700 0.93rem var(--font-body);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 11px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .25s ease, color .25s ease, border-color .25s ease,
+              transform .15s ease, box-shadow .25s ease;
+}
+/* Burgundy gradient hover */
+.book-now-btn:hover {
+  background: var(--accent-grad);
+  border-color: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(75, 14, 31, 0.25);
+}
+.book-now-btn:active { transform: translateY(0); box-shadow: none; }
+
+/* ===== GALLERY MODAL ===== */
+.gallery-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(18, 16, 15, 0.9);
+  display: grid; grid-template-rows: auto 1fr auto; place-items: center;
+  z-index: 1000; padding: 24px; animation: fadeIn 0.25s ease;
+}
+.gallery-close {
+  position: absolute; top: 16px; right: 20px;
+  width: 44px; height: 44px; border: none; border-radius: 999px;
+  color: #fff; background: rgba(255,255,255,0.14);
+  font-size: 28px; cursor: pointer; transition: background 0.2s ease;
+}
+.gallery-close:hover { background: rgba(255,255,255,0.25); }
+.gallery-stage {
+  width: min(1060px, 94vw); height: min(70vh, 76vw);
+  border-radius: 12px; display: grid; place-items: center; overflow: hidden;
+}
+.gallery-image { max-width: 100%; max-height: 100%; object-fit: contain; }
+.gallery-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 46px; height: 46px; border: none; border-radius: 999px;
+  background: rgba(255,255,255,0.14); color: #fff; font-size: 30px;
+  cursor: pointer; transition: background 0.2s ease;
+}
+.gallery-nav:hover { background: rgba(255,255,255,0.26); }
+.gallery-prev { left: 12px; } .gallery-next { right: 12px; }
+
+.gallery-thumbs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+  max-width: 636px; /* fits 6 thumbs */
+  margin: 18px auto 0;
+  overflow-x: hidden;  /* only hide horizontal overflow */
+  overflow-y: visible; /* ✅ let hover/active thumbs float above */
+  position: relative;
+}
+
+.gallery-thumbs-inner {
+  display: flex;
+  gap: 12px;
+  transition: transform 0.25s ease; /* smooth slide */
+}
+
+.gallery-thumb {
+  position: relative;
+  flex: 0 0 auto;
+  width: 96px;
+  aspect-ratio: 16 / 11;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: visible;                /* ✅ no clipping on lift */
+  transition: transform 0.25s ease; /* lift happens on wrapper */
+  will-change: transform;
+}
+
+
+/* Image only, no border or frame */
+.gallery-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  border-radius: inherit;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+
+.gallery-thumb:hover,
+.gallery-thumb.is-active {
+  transform: translateY(-3px);      /* ✅ no crop now */
+}
+.gallery-thumb:hover img,
+.gallery-thumb.is-active img {
+  filter: brightness(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
+.gallery-thumbs {
+  overflow-x: hidden;
+  overflow-y: visible;               /* ✅ allow upward lift */
+}
+
+/* Remove all remaining outlines or decorations */
+.gallery-thumb,
+.gallery-thumb img {
+  border:none !important;
+  outline: none !important;
+  background: none !important;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+/* ===== IMAGE COUNTER ===== */
+.gallery-counter {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font: 600 0.95rem var(--font-body);
+  padding: 4px 12px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  letter-spacing: 0.5px;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ====== HARD-LOCKED 3+2 LAYOUT ====== */
+.room-grid{
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+  width:100%;
+  align-items:center;                 /* center each row wrapper */
+}
+
+/* each row holds cards and is centered */
+.rooms-row{
+  display:flex;
+  gap:40px;
+  justify-content:center;             /* content centered inside the row */
+  width:100%;
+  max-width: calc(3 * 344px + 2 * 40px); /* width of a 3-card row */
+}
+
+/* last row with 1–2 cards stays perfectly centered */
+.rooms-row--last{
+  max-width:none;                     /* allow natural shrink */
+  width:auto;
+}
+
+/* card footprint: fixed so rows line up */
+.rooms-row .room-card{
+  width:344px !important;
+  flex:0 0 344px !important;
+  margin:0 !important;
+}
+
+/* tablet: 2 per row */
+@media (max-width:1100px){
+  .rooms-row{
+    max-width: calc(2 * 344px + 1 * 40px);
+    flex-wrap:wrap;
+  }
+}
+
+/* mobile: 1 per row */
+@media (max-width:640px){
+  .rooms-row{
+    max-width:360px;
+    gap:28px;
+  }
+  .rooms-row .room-card{
+    width:360px !important;
+    flex-basis:360px !important;
+  }
+}
+
+/* --- Show the entire photo in the modal --- */
+.gallery-stage {
+  /* let the image define height, but cap by viewport */
+  width: min(1200px, 94vw);
+  height: auto;
+  max-height: calc(100vh - 220px);     /* leave room for thumbs & chrome */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;                    /* don't crop the image edges */
+  background: transparent;
+  border-radius: 12px;
+}
+
+.gallery-image {
+  display: block;
+  width: auto;                          /* keep natural aspect */
+  height: auto;                         /* keep natural aspect */
+  max-width: 100%;
+  max-height: calc(100vh - 220px);      /* same cap as stage */
+  object-fit: contain;                  /* never crop */
+}
+
+/* keep arrows vertically centered relative to image area */
+.gallery-nav {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* if screen is short, give a bit more room to the image */
+@media (max-height: 700px) {
+  .gallery-stage,
+  .gallery-image {
+    max-height: calc(100vh - 160px);
+  }
+}

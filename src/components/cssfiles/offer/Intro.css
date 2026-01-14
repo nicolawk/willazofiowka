@@ -1,0 +1,103 @@
+/* base styles stay the same above... */
+
+.offer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(247, 243, 234, 0.85);
+  padding: 80px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.offer-content {
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.offer-subtitle {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: #4b0e1f;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.offer-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 25px;
+}
+
+.offer-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.offer-image-wrapper {
+  max-width: 700px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.offer-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ✅ MOBILE FIX */
+@media (max-width: 768px) {
+  .offer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .offer-content {
+    margin: 0 auto 30px auto;
+    text-align: center;
+  }
+
+  /* Center photo + visible margin on both sides */
+  .offer-image-wrapper {
+    width: 90%;              /* smaller than full width */
+    max-width: 500px;        /* optional, keeps it nice */
+    margin: 20px auto;       /* centers it + top/bottom space */
+  }
+
+  .offer-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .reverse {
+    flex-direction: column-reverse !important;
+  }
+
+  .row, .locations-section-content, .changing-content,
+  .zakopane-section-content, .strengths-cards, .location-block {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .location-image img,
+  .changing-image img,
+  .zakopane-image img,
+  .strength-image {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

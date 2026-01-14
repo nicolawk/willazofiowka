@@ -1,0 +1,19 @@
+{
+  "brand": "Willa Zofiówka",
+  "headerTitle": "LOCATIONS",
+  "introTitle": "Our Destinations",
+  "introDescription": "Discover our carefully selected locations across Europe — each one chosen for its unique charm, premium accommodation, and proximity to local experiences. Whether you're seeking the vibrant pulse of a city, the peaceful rhythm of the sea, or the serenity of the mountains, we’ve got your perfect stay.",
+
+  "londonName": "London",
+  "londonDescription": "Our London location thrives in the heart of the UK’s capital. With over 200 addresses available across the city, we offer both long-term and short-term lets in prime zones. Whether you're here for business, leisure, or relocation, our flexible London portfolio guarantees a perfect match.",
+
+  "marbellaName": "Marbella",
+  "marbellaDescription": "Located in the serene hills of Los Altos de Los Monteros, our Marbella homes offer panoramic coastal views, luxurious design, and tranquil Mediterranean living. Ideal for extended stays or peaceful getaways.",
+
+  "zakopaneName": "Zakopane",
+  "zakopaneDescription": "Nestled at the base of the Tatra Mountains, Willa Zofiówka in Zakopane combines comfort and charm in a picturesque alpine setting. Perfect for families, couples, and mountain adventurers alike.",
+
+  "findUs": "🌍 Find us here",
+  "visitInstagram": "Visit us on Instagram",
+  "mapTitle": "Map of {{city}}"
+}

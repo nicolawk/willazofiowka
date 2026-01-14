@@ -1,0 +1,115 @@
+:root {
+  --bg: #f7f3ea;
+  --text: #2b1d17;
+  --muted: #74685f;
+  --accent: #4b0e1f;
+  --accent-2: #c6a567;
+}
+
+.booking-intro {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--text);
+  overflow: hidden;
+}
+
+.booking-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(247, 243, 234, 0.85); /* soft beige veil */
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.booking-content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  padding: 0 20px;
+}
+
+.booking-subtitle {
+  font-family: "Lora", serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--accent-2);
+  margin-bottom: 16px;
+}
+
+.booking-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.booking-text {
+  font-family: "Lora", serif;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.booking-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.book-btn,
+.discover-btn {
+  padding: 14px 32px;
+  font-family: "Lora", serif;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.book-btn {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(75, 14, 31, 0.25);
+}
+
+.book-btn:hover {
+  background: var(--accent-2);
+  color: var(--text);
+}
+
+.discover-btn {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
+.discover-btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .reverse {
+    flex-direction: column-reverse !important;
+  }
+
+  .row, .locations-section-content, .changing-content,
+  .zakopane-section-content, .strengths-cards, .location-block {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .location-image img,
+  .changing-image img,
+  .zakopane-image img,
+  .strength-image {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

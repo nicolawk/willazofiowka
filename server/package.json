@@ -1,0 +1,26 @@
+{
+  "name": "zofiowka-server",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@google-cloud/translate": "^9.2.1",
+    "@vitalets/google-translate-api": "^9.2.1",
+    "axios": "^1.13.2",
+    "better-sqlite3": "^12.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "ethers": "^6.15.0",
+    "express": "^4.22.1",
+    "ical-generator": "^10.0.0",
+    "ics": "^3.8.1",
+    "node-cron": "^4.2.1",
+    "node-fetch": "^3.3.2",
+    "node-ical": "^0.22.1",
+    "nodemailer": "^6.10.1",
+    "react-date-range": "^2.0.1"
+  }
+}

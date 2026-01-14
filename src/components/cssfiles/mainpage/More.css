@@ -1,0 +1,89 @@
+.more-container {
+    padding: 2rem 0;
+    background-color: rgba(247, 243, 234, 0.85);
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.more-heading {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: bold;
+    text-align: left;
+    width: 90%;
+    max-width: 800px;
+    margin-left: 5vw;
+}
+
+.more-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Text Section */
+.more-container.all-txt {
+    font-size: clamp(1rem, 2vw, 1.8rem);
+    line-height: 1.6;
+    flex: 1 1 55%;
+    text-align: left;
+    min-width: 280px;
+}
+
+/* Image Wrapper */
+.more-container .villa-img {
+    flex: 1 1 35%;
+    max-width: 360px; /* Smaller image */
+    height: auto;
+    border-radius: 0.75rem;
+    object-fit: cover;
+    min-width: 240px;
+
+}
+
+
+@media (max-width: 1024px) {
+    .more-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .villa-img {
+        max-width: 90vw;
+    }
+
+    .all-txt {
+        text-align: center;
+    }
+
+    .more-heading {
+        text-align: center;
+        margin-left: 0;
+    }
+}
+@media (max-width: 768px) {
+  .reverse {
+    flex-direction: column-reverse !important;
+  }
+
+  .row, .locations-section-content, .changing-content,
+  .zakopane-section-content, .strengths-cards, .location-block {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .location-image img,
+  .changing-image img,
+  .zakopane-image img,
+  .strength-image {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+}

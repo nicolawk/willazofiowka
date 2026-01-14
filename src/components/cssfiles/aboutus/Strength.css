@@ -1,0 +1,109 @@
+.our-strengths-section {
+  background-color:rgba(247, 243, 234, 0.85);
+  padding: 8vw 4vw;
+  text-align: center;
+  width: 100%;
+}
+
+.our-strengths-heading {
+  font-family: "Domine", serif;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 6vh;
+  color: #2c2c2c;
+  letter-spacing: 0.5px;
+}
+
+.strengths-cards {
+  display: flex;
+  gap: 4vw;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.strength-card {
+  max-width: 400px; /* Increased max-width */
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.strength-image {
+  width: 110%;
+  height: 320px; /* Increased image height */
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.strength-card:hover .strength-image {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.strength-title {
+  font-family: "Domine", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0.3rem 0;
+  color: #2c2c2c;
+}
+
+.strength-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.strength-link {
+  font-size: 0.95rem;
+  color: #2c2c2c;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid #2c2c2c;
+  width: fit-content;
+  transition: opacity 0.3s;
+}
+
+.strength-link:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+  .our-strengths-heading {
+    font-size: 6vw;
+    margin-bottom: 4vh;
+  }
+
+  .strengths-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+  }
+
+  .strength-card {
+    max-width: 90%;
+  }
+}
+@media (max-width: 768px) {
+  .reverse {
+    flex-direction: column-reverse !important;
+  }
+
+  .row, .locations-section-content, .changing-content,
+  .zakopane-section-content, .strengths-cards, .location-block {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .location-image img,
+  .changing-image img,
+  .zakopane-image img,
+  .strength-image {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

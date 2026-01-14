@@ -1,0 +1,50 @@
+.locations-intro {
+  background-color: rgba(247, 243, 234, 0.85);
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  font-family: "Domine", serif;
+  width:100%;
+}
+
+.locations-title {
+  font-size: 3.5rem;
+  color: #1e1e1e;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.locations-description {
+  font-size: 1.25rem;
+  max-width: 850px;
+  margin: 0 auto;
+  color: #444;
+  line-height: 1.8;
+}
+@media (max-width: 768px) {
+  .reverse {
+    flex-direction: column-reverse !important;
+  }
+
+  .row, .locations-section-content, .changing-content,
+  .zakopane-section-content, .strengths-cards, .location-block {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .location-image img,
+  .changing-image img,
+  .zakopane-image img,
+  .strength-image {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .locations-description {
+    padding: 0 20px;   /* add clean left + right spacing */
+  }
+
+  .locations-title {
+    padding: 0 20px;   /* also pad the heading for symmetry */
+  }
+}

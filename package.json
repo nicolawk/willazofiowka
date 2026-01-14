@@ -1,0 +1,58 @@
+{
+  "name": "zofiowka",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@google-cloud/translate": "^9.2.1",
+    "@studio-freight/lenis": "^1.0.42",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "bootstrap": "^5.3.3",
+    "cra-template": "1.2.0",
+    "date-fns": "^2.30.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "i18next": "^22.4.10",
+    "i18next-browser-languagedetector": "^7.2.0",
+    "i18next-http-backend": "^3.0.2",
+    "jquery": "^3.7.1",
+    "nodemailer": "^7.0.10",
+    "react": "^18.3.1",
+    "react-date-range": "^1.4.0",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^12.3.1",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.9.5",
+    "react-router-hash-link": "^2.4.3",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^4.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:4000"
+}

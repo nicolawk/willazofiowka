@@ -1,0 +1,34 @@
+.line-container {
+    background-color: rgba(247, 243, 234, 0.85);
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    height:100%;
+    width: 100%;
+  }
+  
+  .line {
+    color:black;
+    height: 5%;
+  }
+  @media (max-width: 768px) {
+  .reverse {
+    flex-direction: column-reverse !important;
+  }
+
+  .row, .locations-section-content, .changing-content,
+  .zakopane-section-content, .strengths-cards, .location-block {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .location-image img,
+  .changing-image img,
+  .zakopane-image img,
+  .strength-image {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

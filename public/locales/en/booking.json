@@ -1,0 +1,78 @@
+{
+  "brand": "Willa Zofiówka",
+  "headerTitle": "BOOKING",
+  "title": "Request a Reservation",
+  "subtitle": "Choose your apartment, dates, and add your details. You’ll receive a confirmation by email.",
+
+  "apartment": "Apartment",
+  "selectApartment": "Select an apartment",
+
+  "checkIn": "Check-in",
+  "checkOut": "Check-out",
+  "stayDates": "Stay dates",
+  "nights": "{{count}} night",
+  "nights_plural": "{{count}} nights",
+
+  "adults": "Adults",
+  "children": "Children",
+
+  "firstName": "First name",
+  "lastName": "Last name",
+  "email": "Email",
+  "phone": "Phone",
+
+  "requests": "Special requests (optional)",
+  "requestsPlaceholder": "Late arrival, cot, allergies, etc.",
+
+  "consentText": "I agree to the processing of my data to handle this reservation.",
+  "privacyPolicy": "Privacy Policy",
+
+  "send": "Send Enquiry",
+  "sending": "Sending...",
+
+  "statusSending": "Sending your enquiry...",
+  "statusSuccess": "Thank you! We’ll confirm availability shortly.",
+  "statusError": "Couldn’t send right now. Please try again or call reception.",
+
+  "modalTitle": "Privacy Policy",
+  "modalClose": "Close",
+  "errorApartment": "Please select an apartment.",
+  "errorDates": "Please select a valid date range.",
+  "errorConsent": "Please accept privacy consent.",
+
+  "policyP1": "We process your personal data (name, contact details, booking details and requests) for the purpose of handling your reservation enquiry, pre-arrival communication and compliance with legal obligations (e.g., registration, invoicing).",
+  "policyP2": "The legal basis is performance of a contract or steps prior to entering a contract, and our legitimate interests in operating our accommodation. Data may be shared with payment providers, property management systems, and competent authorities when required by law.",
+  "policyP3": "You have the right to access, rectify, erase, or restrict processing of your data, and to object where applicable. Contact: zakopanezofiowka@gmail.com. Learn more about retention periods and processors in the full policy below.",
+
+  "introSubtitle": "PLAN YOUR STAY AT WILLA ZOFIÓWKA",
+  "introTitle": "Book your escape to the Tatra Mountains",
+  "introText": "Experience the warmth and authenticity of Zakopane in a setting where regional tradition meets understated luxury. Reserve your preferred suite directly with us for the best available rates and personal service — your alpine retreat awaits at Willa Zofiówka. Prices may vary. Prices are based on availability, number of adults/children, and the duration of your stay. Every direct reservation gets 20% off.",
+  "introButton": "Discover Our Rooms",
+
+  "priceHint": "Select apartment and dates to see an estimated total.",
+  "priceLoading": "Calculating price...",
+  "priceError": "Could not calculate the price. Please try again.",
+  "priceNights": "Room price for {{count}} night",
+  "priceNights_plural": "Room price for {{count}} nights",
+  "priceBreakfast": "Breakfast:",
+  "priceTotal": "Total to pay:",
+
+"breakfastLabel": "Breakfast (optional)",
+"breakfastHint": "50 PLN per person per night",
+"breakfastAmount": "+{{amount}} PLN",
+"cribLabel": "Baby crib (optional)",
+"cribCount": "Number of cribs",
+"cribAmount": "+{{amount}} PLN",
+
+  "paymentMethod": "Payment method",
+  "payCardSaferpay": "Card (Saferpay)",
+  "payCrypto": "Crypto",
+  "payNow": "Pay now",
+  "rooms": {
+  "family5": "Family Room — Ground Floor, Terrace access (nr 5)",
+  "tatra3": "Tatra Suite — 2nd Floor, City view (nr 4)",
+  "deluxe1": "Deluxe One Bedroom — Ground Floor, Terrace access (nr 2)",
+  "deluxe4": "Deluxe One Bedroom — 2nd Floor, Mountain view (nr 3)",
+  "family2": "Family Room — Ground Floor, Terrace access (nr 1)"
+}
+}

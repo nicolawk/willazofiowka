@@ -1,0 +1,18 @@
+{
+  "brand": "Willa Zofiówka",
+  "headerTitle": "LOKALIZACJE",
+   "introTitle": "Nasze Lokalizacje",
+  "introDescription": "Odkryj starannie wybrane lokalizacje w całej Europie — każda wyróżnia się wyjątkowym charakterem, komfortowym zakwaterowaniem i bliskością lokalnych atrakcji. Niezależnie od tego, czy szukasz miejskiego rytmu, spokoju nad morzem, czy ciszy gór, u nas znajdziesz idealne miejsce na pobyt.",
+  "londonName": "Londyn",
+  "londonDescription": "Nasza lokalizacja w Londynie znajduje się w samym sercu stolicy Wielkiej Brytanii. Oferujemy ponad 200 adresów w całym mieście, zarówno na pobyty długoterminowe, jak i krótkoterminowe. Nieważne, czy podróżujesz w celach biznesowych, turystycznych, czy relokacyjnych — nasza elastyczna oferta zapewni Ci idealny wybór.",
+
+  "marbellaName": "Marbella",
+  "marbellaDescription": "Położone w spokojnych wzgórzach Los Altos de Los Monteros nasze domy w Marbelli oferują panoramiczne widoki na wybrzeże, luksusowe wnętrza i relaksujący śródziemnomorski klimat. Idealne na dłuższe pobyty lub spokojny wypoczynek.",
+
+  "zakopaneName": "Zakopane",
+  "zakopaneDescription": "U stóp Tatr Willa Zofiówka łączy komfort i urok w malowniczej górskiej scenerii. Idealna dla rodzin, par i miłośników górskich wędrówek.",
+
+  "findUs": "🌍 Znajdź nas tutaj",
+  "visitInstagram": "Odwiedź nas na Instagramie",
+  "mapTitle": "Mapa: {{city}}"
+}

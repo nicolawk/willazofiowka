@@ -1,0 +1,79 @@
+{
+  "brand": "Willa Zofiówka",
+  "headerTitle": "REZERWACJA",
+  "title": "Złóż Rezerwację",
+  "subtitle": "Wybierz apartament, daty oraz wpisz swoje dane. Potwierdzenie otrzymasz na e-mail.",
+
+  "apartment": "Apartament",
+  "selectApartment": "Wybierz apartament",
+
+  "checkIn": "Przyjazd",
+  "checkOut": "Wyjazd",
+  "stayDates": "Daty pobytu",
+  "nights": "{{count}} noc",
+  "nights_plural": "{{count}} noce",
+
+  "adults": "Dorośli",
+  "children": "Dzieci",
+
+  "firstName": "Imię",
+  "lastName": "Nazwisko",
+  "email": "E-mail",
+  "phone": "Telefon",
+
+  "requests": "Uwagi specjalne (opcjonalnie)",
+  "requestsPlaceholder": "Późny przyjazd, łóżeczko, alergie, itd.",
+
+  "consentText": "Wyrażam zgodę na przetwarzanie moich danych w celu obsługi tej rezerwacji.",
+  "privacyPolicy": "Polityka Prywatności",
+
+  "send": "Wyślij Zapytanie",
+  "sending": "Wysyłanie...",
+
+  "statusSending": "Wysyłanie zgłoszenia...",
+  "statusSuccess": "Dziękujemy! Wkrótce potwierdzimy dostępność.",
+  "statusError": "Nie udało się wysłać. Spróbuj ponownie lub zadzwoń do recepcji.",
+
+  "modalTitle": "Polityka Prywatności",
+  "modalClose": "Zamknij",
+  "errorApartment": "Wybierz apartament.",
+  "errorDates": "Wybierz poprawny zakres dat.",
+  "errorConsent": "Zaakceptuj zgodę na przetwarzanie danych.",
+
+  "policyP1": "Przetwarzamy Twoje dane osobowe (imię, dane kontaktowe, szczegóły rezerwacji i uwagi) w celu obsługi Twojego zapytania rezerwacyjnego, komunikacji przed przyjazdem oraz w celu spełnienia obowiązków prawnych (np. meldunek, fakturowanie).",
+  "policyP2": "Podstawą prawną przetwarzania jest wykonanie umowy lub działania podejmowane przed zawarciem umowy oraz nasz prawnie uzasadniony interes polegający na prowadzeniu działalności noclegowej. Dane mogą być udostępniane dostawcom płatności, systemom zarządzania obiektami oraz właściwym organom, jeśli wymagają tego przepisy prawa.",
+  "policyP3": "Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia lub ograniczenia przetwarzania, a także prawo do sprzeciwu — jeśli ma to zastosowanie. Kontakt: zakopanezofiowka@gmail.com. Więcej informacji o okresach przechowywania danych i podmiotach przetwarzających znajdziesz w pełnej polityce poniżej.",
+
+  "introSubtitle": "ZAPLANUJ SWÓJ POBYT W WILLI ZOFIÓWKA",
+  "introTitle": "Zarezerwuj swój wypoczynek w Tatrach",
+  "introText": "Poczuj ciepło i autentyczną atmosferę Zakopanego w miejscu, gdzie regionalna tradycja łączy się z subtelnym luksusem. Zarezerwuj wybrany apartament bezpośrednio u nas, aby otrzymać najlepszą cenę i indywidualną obsługę — Twój górski wypoczynek czeka w Willi Zofiówka. Ceny mogą się różnić w zależności od dostępności, liczby osób dorosłych/dzieci oraz długości pobytu. Każda rezerwacja bezpośrednia otrzymuje 20% rabatu.",
+  "introButton": "Zobacz Nasze Pokoje", 
+
+  "priceHint": "Wybierz apartament oraz daty, aby zobaczyć orientacyjną cenę.",
+  "priceLoading": "Obliczanie ceny...",
+  "priceError": "Nie udało się obliczyć ceny. Spróbuj ponownie.",
+  "priceNights": "Cena za {{count}} noc",
+  "priceNights_plural": "Cena za {{count}} noce",
+  "priceBreakfast": "Śniadania:",
+  "priceTotal": "Razem do zapłaty:",
+
+"breakfastLabel": "Śniadanie (opcjonalnie)",
+  "breakfastHint": "50 PLN za osobę za noc",
+  "breakfastAmount": "+ {{amount}} PLN",
+  "cribLabel": "Łóżeczko dziecięce (opcjonalnie)",
+  "cribCount": "Liczba łóżeczek",
+  "cribAmount": "+ {{amount}} PLN",
+
+
+  "paymentMethod": "Metoda płatności",
+  "payCardSaferpay": "Karta (Saferpay)",
+  "payCrypto": "Kryptowaluta",
+  "payNow": "Zapłać teraz",
+  "rooms": {
+  "family5": "Pokój rodzinny — Parter, wyjście na taras (nr 5)",
+  "tatra3": "Apartament Tatra — 2. piętro, widok na miasto (nr 4)",
+  "deluxe1": "Deluxe Jednosypialniowy — Parter, wyjście na taras (nr 2)",
+  "deluxe4": "Deluxe Jednosypialniowy — 2. piętro, widok na góry (nr 3)",
+  "family2": "Pokój rodzinny — Parter, wyjście na taras (nr 1)"
+}
+}
