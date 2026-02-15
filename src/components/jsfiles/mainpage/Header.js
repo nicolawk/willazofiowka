@@ -1,7 +1,6 @@
 // Header.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import "../../cssfiles/mainpage/Header.css";
-
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -11,27 +10,20 @@ import i18n from "../../../i18n";
 
 const ALL_LANGS = ["en", "pl", "ar"];
 
-// ✅ Put your R2 URLs here:
+// ✅ R2 direct links (custom domain)
 const SUMMER_VIDEO_MP4 = "https://media.willazofiowka.pl/summer.mp4";
 const WINTER_VIDEO_MP4 = "https://media.willazofiowka.pl/winter.mp4";
 
-// Optional poster (can be empty)
-const HERO_POSTER = "";
-
-function getSeason(date = new Date()) {
-  const m = date.getMonth() + 1; // 1-12
-  if (m >= 3 && m <= 8) return "summer"; // spring+summer
-  return "winter"; // fall+winter
-}
+// optional poster (can be empty)
+const HERO_POSTER = ""; // e.g. "https://media.willazofiowka.pl/hero-poster.jpg"
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
   const [openLang, setOpenLang] = useState(false);
-
   const { t } = useTranslation(["navbar", "home", "common"]);
+
   const showSidebar = () => setSidebar((s) => !s);
 
-  // Close sidebar on scroll
   useEffect(() => {
     let id;
     const handleScroll = () => {
@@ -53,23 +45,23 @@ const Header = () => {
     setOpenLang(false);
   };
 
-  useEffect(() => {
-    const lng = (i18n.resolvedLanguage || "en").slice(0, 2);
-    document.documentElement.lang = lng;
-    document.documentElement.dir = i18n.dir(lng);
+  // ✅ choose video by season:
+  // Spring (Mar-May) + Summer (Jun-Aug) => summer.mp4
+  // Fall (Sep-Nov) + Winter (Dec-Feb) => winter.mp4
+  const heroVideoSrc = useMemo(() => {
+    const m = new Date().getMonth() + 1; // 1..12
+    const isSpringOrSummer = m >= 3 && m <= 8;
+    return isSpringOrSummer ? SUMMER_VIDEO_MP4 : WINTER_VIDEO_MP4;
   }, []);
 
   const currentLang = (i18n.language || "en").slice(0, 2);
   const otherLangs = ALL_LANGS.filter((lng) => lng !== currentLang);
 
-  const season = useMemo(() => getSeason(new Date()), []);
-  const heroMp4 = season === "summer" ? SUMMER_VIDEO_MP4 : WINTER_VIDEO_MP4;
-
   return (
     <div className="header-container" data-dir={i18n.dir()}>
       <div className="video-container">
         <video
-          key={heroMp4}              // ✅ forces reload when URL changes
+          key={heroVideoSrc}     // ✅ forces reload if src changes
           autoPlay
           loop
           muted
@@ -78,8 +70,7 @@ const Header = () => {
           poster={HERO_POSTER || undefined}
           preload="metadata"
         >
-          <source src={heroMp4} type="video/mp4" />
-          Your browser does not support the video tag.
+          <source src={heroVideoSrc} type="video/mp4" />
         </video>
       </div>
 
@@ -93,30 +84,16 @@ const Header = () => {
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items">
             <li className="navbar-toggle">
-              <button
-                className="menu-bars"
-                aria-label="close"
-                onClick={() => setSidebar(false)}
-              >
+              <button className="menu-bars" aria-label="close" onClick={() => setSidebar(false)}>
                 <AiIcons.AiOutlineClose />
               </button>
             </li>
 
-            <li className="nav-text" onClick={() => setSidebar(false)}>
-              <Link to="/offer">{t("navbar:offer")}</Link>
-            </li>
-            <li className="nav-text" onClick={() => setSidebar(false)}>
-              <Link to="/booking">{t("navbar:booking")}</Link>
-            </li>
-            <li className="nav-text" onClick={() => setSidebar(false)}>
-              <Link to="/locations">{t("navbar:locations")}</Link>
-            </li>
-            <li className="nav-text" onClick={() => setSidebar(false)}>
-              <Link to="/aboutus">{t("navbar:about")}</Link>
-            </li>
-            <li className="nav-text" onClick={() => setSidebar(false)}>
-              <HashLink smooth to="/#reviews">{t("navbar:reviews")}</HashLink>
-            </li>
+            <li className="nav-text" onClick={() => setSidebar(false)}><Link to="/offer">{t("navbar:offer")}</Link></li>
+            <li className="nav-text" onClick={() => setSidebar(false)}><Link to="/booking">{t("navbar:booking")}</Link></li>
+            <li className="nav-text" onClick={() => setSidebar(false)}><Link to="/locations">{t("navbar:locations")}</Link></li>
+            <li className="nav-text" onClick={() => setSidebar(false)}><Link to="/aboutus">{t("navbar:about")}</Link></li>
+            <li className="nav-text" onClick={() => setSidebar(false)}><HashLink smooth to="/#reviews">{t("navbar:reviews")}</HashLink></li>
           </ul>
         </nav>
 
@@ -150,9 +127,7 @@ const Header = () => {
       <div className="header-content">
         <h2 className="header-text">{t("home:hero.title")}</h2>
         <p className="sub-head-text">{t("home:hero.subtitle")}</p>
-        <a href="/booking" className="book-now">
-          {t("home:hero.book")}
-        </a>
+        <a href="/booking" className="book-now">{t("home:hero.book")}</a>
       </div>
     </div>
   );
