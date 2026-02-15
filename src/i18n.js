@@ -8,7 +8,12 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: "en",
+    resources,
+    lng: "pl", 
+    fallbackLng: "pl",
+        interpolation: {
+      escapeValue: false,
+    },
     supportedLngs: ["en", "pl", "ar"],
 ns: ["common", "navbar", "home", "mainpage", "about", "offer"],
     defaultNS: "common",
