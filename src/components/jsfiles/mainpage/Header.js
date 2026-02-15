@@ -13,6 +13,8 @@ const ALL_LANGS = ["en", "pl", "ar"];
 // ✅ PUT YOUR CDN LINKS HERE (Bunny / R2 / anything)
 const SUMMER_MP4 = "https://media.willazofiowka.pl/summer.mp4";
 const WINTER_MP4 = "https://media.willazofiowka.pl/winter.mp4";
+const HERO_POSTER = "";
+
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
