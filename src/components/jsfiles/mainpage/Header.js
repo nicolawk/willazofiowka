@@ -1,6 +1,7 @@
 // Header.jsx
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "../../cssfiles/mainpage/Header.css";
+
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -10,11 +11,18 @@ import i18n from "../../../i18n";
 
 const ALL_LANGS = ["en", "pl", "ar"];
 
-// ✅ PUT YOUR CDN LINKS HERE (Bunny / R2 / anything)
-const SUMMER_MP4 = "https://media.willazofiowka.pl/summer.mp4";
-const WINTER_MP4 = "https://media.willazofiowka.pl/winter.mp4";
+// ✅ Put your R2 URLs here:
+const SUMMER_VIDEO_MP4 = "https://media.willazofiowka.pl/summer.mp4";
+const WINTER_VIDEO_MP4 = "https://media.willazofiowka.pl/winter.mp4";
+
+// Optional poster (can be empty)
 const HERO_POSTER = "";
 
+function getSeason(date = new Date()) {
+  const m = date.getMonth() + 1; // 1-12
+  if (m >= 3 && m <= 8) return "summer"; // spring+summer
+  return "winter"; // fall+winter
+}
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -23,13 +31,7 @@ const Header = () => {
   const { t } = useTranslation(["navbar", "home", "common"]);
   const showSidebar = () => setSidebar((s) => !s);
 
-  // ✅ Mar–Aug => summer, Sep–Feb => winter
-  const heroVideoSrc = useMemo(() => {
-    const month = new Date().getMonth(); // 0-11
-    const isSummerSeason = month >= 2 && month <= 7;
-    return isSummerSeason ? SUMMER_MP4 : WINTER_MP4;
-  }, []);
-
+  // Close sidebar on scroll
   useEffect(() => {
     let id;
     const handleScroll = () => {
@@ -52,7 +54,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    const lng = i18n.resolvedLanguage || "en";
+    const lng = (i18n.resolvedLanguage || "en").slice(0, 2);
     document.documentElement.lang = lng;
     document.documentElement.dir = i18n.dir(lng);
   }, []);
@@ -60,20 +62,23 @@ const Header = () => {
   const currentLang = (i18n.language || "en").slice(0, 2);
   const otherLangs = ALL_LANGS.filter((lng) => lng !== currentLang);
 
+  const season = useMemo(() => getSeason(new Date()), []);
+  const heroMp4 = season === "summer" ? SUMMER_VIDEO_MP4 : WINTER_VIDEO_MP4;
+
   return (
     <div className="header-container" data-dir={i18n.dir()}>
       <div className="video-container">
         <video
-          key={heroVideoSrc}
+          key={heroMp4}              // ✅ forces reload when URL changes
           autoPlay
           loop
           muted
           playsInline
           className="bg-video"
-          preload="metadata"
           poster={HERO_POSTER || undefined}
+          preload="metadata"
         >
-          <source src={heroVideoSrc} type="video/mp4" />
+          <source src={heroMp4} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>

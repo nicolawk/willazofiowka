@@ -24,9 +24,17 @@ const PORT = process.env.PORT || 4000;
 const HOST = "0.0.0.0";
 
 app.use(cors({
-  origin: ["https://willazofiowka.pl", "https://willazofiowka.vercel.app"],
+  origin: (origin, cb) => {
+    if (!origin) return cb(null, true);
+    const ok =
+      origin === "https://willazofiowka.pl" ||
+      origin === "https://willazofiowka.vercel.app" ||
+      origin.endsWith(".vercel.app");
+    return ok ? cb(null, true) : cb(new Error("Not allowed by CORS"));
+  },
   methods: ["GET","POST","DELETE","OPTIONS"]
 }));
+
 app.use(express.json({ limit: "200kb" }));
 app.use("/api", reviewsRouter);
 
