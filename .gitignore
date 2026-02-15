@@ -15,3 +15,5 @@ dist/
 *.db
 
 .vercel
+!public/videos/
+!public/videos/*.mp4

@@ -1,7 +1,6 @@
 // Header.jsx
 import React, { useState, useEffect, useMemo } from "react";
 import "../../cssfiles/mainpage/Header.css";
-
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -11,9 +10,12 @@ import i18n from "../../../i18n";
 
 const ALL_LANGS = ["en", "pl", "ar"];
 
-// ✅ Local files (served from /public)
-const SUMMER_VIDEO = "/videos/summer.mp4";
-const WINTER_VIDEO = "/videos/winter.mp4";
+// ✅ PUT YOUR CDN LINKS HERE (Bunny / R2 / anything)
+const SUMMER_MP4 = "https://media.willazofiowka.pl/summer.mp4";
+const WINTER_MP4 = "https://media.willazofiowka.pl/winter.mp4";
+
+// optional but recommended (fast first paint)
+const HERO_POSTER = "https://willa-media.b-cdn.net/hero-poster.jpg";
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -22,13 +24,12 @@ const Header = () => {
   const { t } = useTranslation(["navbar", "home", "common"]);
   const showSidebar = () => setSidebar((s) => !s);
 
-  // ✅ March–August => summer, Sept–Feb => winter
-  const isSummerSeason = useMemo(() => {
+  // ✅ Mar–Aug => summer, Sep–Feb => winter
+  const heroVideoSrc = useMemo(() => {
     const month = new Date().getMonth(); // 0-11
-    return month >= 2 && month <= 7;
+    const isSummerSeason = month >= 2 && month <= 7;
+    return isSummerSeason ? SUMMER_MP4 : WINTER_MP4;
   }, []);
-
-  const heroVideoSrc = isSummerSeason ? SUMMER_VIDEO : WINTER_VIDEO;
 
   useEffect(() => {
     let id;
@@ -64,13 +65,14 @@ const Header = () => {
     <div className="header-container" data-dir={i18n.dir()}>
       <div className="video-container">
         <video
-          key={heroVideoSrc}   // ✅ forces reload when src changes
+          key={heroVideoSrc}
           autoPlay
           loop
           muted
           playsInline
           className="bg-video"
           preload="metadata"
+          poster={HERO_POSTER || undefined}
         >
           <source src={heroVideoSrc} type="video/mp4" />
           Your browser does not support the video tag.
@@ -99,19 +101,15 @@ const Header = () => {
             <li className="nav-text" onClick={() => setSidebar(false)}>
               <Link to="/offer">{t("navbar:offer")}</Link>
             </li>
-
             <li className="nav-text" onClick={() => setSidebar(false)}>
               <Link to="/booking">{t("navbar:booking")}</Link>
             </li>
-
             <li className="nav-text" onClick={() => setSidebar(false)}>
               <Link to="/locations">{t("navbar:locations")}</Link>
             </li>
-
             <li className="nav-text" onClick={() => setSidebar(false)}>
               <Link to="/aboutus">{t("navbar:about")}</Link>
             </li>
-
             <li className="nav-text" onClick={() => setSidebar(false)}>
               <HashLink smooth to="/#reviews">{t("navbar:reviews")}</HashLink>
             </li>
@@ -148,7 +146,9 @@ const Header = () => {
       <div className="header-content">
         <h2 className="header-text">{t("home:hero.title")}</h2>
         <p className="sub-head-text">{t("home:hero.subtitle")}</p>
-        <a href="/booking" className="book-now">{t("home:hero.book")}</a>
+        <a href="/booking" className="book-now">
+          {t("home:hero.book")}
+        </a>
       </div>
     </div>
   );
