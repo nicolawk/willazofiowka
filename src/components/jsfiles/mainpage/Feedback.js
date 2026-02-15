@@ -4,7 +4,9 @@ import { useTranslation } from "react-i18next";
 import i18n from "../../../i18n";
 
 const PLACE_ID = process.env.REACT_APP_GOOGLE_PLACE_ID || "ChIJV4vjBwHzFUcR0EcOSVq4vs4";
-const API_BASE = process.env.NODE_ENV === "development" ? "http://localhost:4000" : "";
+const API_BASE =
+  process.env.REACT_APP_API_BASE ||
+  (process.env.NODE_ENV === "development" ? "http://localhost:4000" : "");
 const AUTO_MS = 6000;
 
 const Feedback = () => {

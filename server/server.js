@@ -23,7 +23,10 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 const HOST = "0.0.0.0";
 
-app.use(cors({ origin: "*", methods: ["GET","POST","DELETE","OPTIONS"] }));
+app.use(cors({
+  origin: ["https://willazofiowka.pl", "https://willazofiowka.vercel.app"],
+  methods: ["GET","POST","DELETE","OPTIONS"]
+}));
 app.use(express.json({ limit: "200kb" }));
 app.use("/api", reviewsRouter);
 

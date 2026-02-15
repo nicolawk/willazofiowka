@@ -14,9 +14,6 @@ const ALL_LANGS = ["en", "pl", "ar"];
 const SUMMER_MP4 = "https://media.willazofiowka.pl/summer.mp4";
 const WINTER_MP4 = "https://media.willazofiowka.pl/winter.mp4";
 
-// optional but recommended (fast first paint)
-const HERO_POSTER = "https://willa-media.b-cdn.net/hero-poster.jpg";
-
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
   const [openLang, setOpenLang] = useState(false);
