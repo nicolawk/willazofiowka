@@ -20,7 +20,6 @@ i18n
     },
 
     detection: {
-      // ✅ First visit: always pl (unless user already chose language)
       order: ["localStorage", "querystring", "navigator"],
       lookupQuerystring: "lng",
       caches: ["localStorage"],

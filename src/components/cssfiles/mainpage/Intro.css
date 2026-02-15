@@ -1,105 +1,86 @@
 html, body {
   margin: 0;
-padding: 0;
-width: 100%;
-height: 100%;
-box-sizing: border-box;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 /* Main Container */
 .intro-container {
-min-height: 100vh; /* Ensures full viewport height */
-width: 100%; /* Avoid exceeding screen width */
-padding: 5vw; /* Adjusted padding for better responsiveness */
-padding-bottom: none;
-text-align: center;
-background-color: rgba(247, 243, 234, 0.85);
-color: #333;
-display: flex;
-flex-direction: column;
-align-items: flex-start; /* Aligns content to the left */
-justify-content: center; /* Center content properly */
-gap: 5vh; /* Adds spacing between all elements dynamically */
+  min-height: 100vh;
+  width: 100%;
+  padding: 5vw;
+  text-align: center;
+  background-color: rgba(247, 243, 234, 0.85);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5vh;
 }
 
 /* Headline */
 .intro-heading {
-font-size: clamp(1.5rem, 4vw, 3rem);
-font-weight: bold;
-text-align: left;
-width: 90%;
-max-width: 800px;
-margin-left: 5vw;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: bold;
+  text-align: left;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 0 0 5vw;
 }
 
 /* Paragraph */
 .all-txt {
-font-size: clamp(1rem, 2vw, 1.8rem);
-line-height: 1.6;
-max-width: 60%;
-text-align: center;
-margin: 2vh auto;
-padding: 0 5vw;
+  font-size: clamp(1rem, 2vw, 1.8rem);
+  line-height: 1.6;
+  max-width: 800px;
+  text-align: left;
+  margin: 2vh 0 0 5vw;
+  padding: 0;
 }
 
 /* Image */
 .villa-img {
-width: 35vw;
-max-width: 60%;
-border-radius: 10px;
-height: auto; /* Maintain aspect ratio */
-align-self: center;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-.intro-container {
-  padding: 8vw;
-  height: auto;
-  align-items: center;
-  gap: 8vh;
-}
-@media (max-width: 768px) {
-  .reverse {
-    flex-direction: column-reverse !important;
-  }
-
-  .row, .locations-section-content, .changing-content,
-  .zakopane-section-content, .strengths-cards, .location-block {
-    flex-direction: column !important;
-    text-align: center;
-    gap: 1.5rem;
-  }
-
-  .location-image img,
-  .changing-image img,
-  .zakopane-image img,
-  .strength-image {
-    width: 100% !important;
-    height: auto !important;
-  }
-}
-
-
-.line {
-  height: 10vh; /* Reduce height on mobile */
-  margin: 2vh auto;
-}
-
-.intro-heading {
-  font-size: 5vw;
-  text-align: left;
-  margin-left: 5vw;
-}
-
-.all-txt {
-  font-size: 4vw;
+  width: min(35vw, 600px);
   max-width: 90%;
-  text-align: center;
+  border-radius: 10px;
+  height: auto;
+  margin: 3vh 0 0 5vw;
+  align-self: flex-start;
 }
 
-.villa-img {
-  width: 80%;
-  max-width: 400px;
+/* Mobile */
+@media (max-width: 768px) {
+  .intro-container {
+    padding: 8vw;
+    min-height: auto;
+    align-items: center;
+    gap: 5vh;
+  }
+
+  .intro-heading {
+    font-size: 5vw;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .all-txt {
+    font-size: 4vw;
+    max-width: 90%;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .villa-img {
+    width: 80%;
+    max-width: 400px;
+    margin-left: 0;
+    align-self: center;
+  }
 }
-} 
