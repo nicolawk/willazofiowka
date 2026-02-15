@@ -25,15 +25,25 @@ const HOST = "0.0.0.0";
 
 app.use(cors({
   origin: (origin, cb) => {
+    // allow server-to-server/no-origin requests
     if (!origin) return cb(null, true);
-    const ok =
-      origin === "https://willazofiowka.pl" ||
-      origin === "https://willazofiowka.vercel.app" ||
-      origin.endsWith(".vercel.app");
-    return ok ? cb(null, true) : cb(new Error("Not allowed by CORS"));
+
+    const allowed = [
+      "https://willazofiowka.pl",
+      "https://www.willazofiowka.pl",
+      "https://willazofiowka.vercel.app",
+    ];
+
+    // allow Vercel preview URLs
+    if (origin.endsWith(".vercel.app")) return cb(null, true);
+
+    if (allowed.includes(origin)) return cb(null, true);
+
+    return cb(new Error("Not allowed by CORS: " + origin));
   },
-  methods: ["GET","POST","DELETE","OPTIONS"]
+  methods: ["GET","POST","DELETE","OPTIONS"],
 }));
+
 
 app.use(express.json({ limit: "200kb" }));
 app.use("/api", reviewsRouter);
