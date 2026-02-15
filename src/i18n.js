@@ -8,20 +8,26 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    resources,
-    lng: "pl", 
+    // ✅ Force default language to Polish on first visit
     fallbackLng: "pl",
-        interpolation: {
-      escapeValue: false,
-    },
-    supportedLngs: ["en", "pl", "ar"],
-ns: ["common", "navbar", "home", "mainpage", "about", "offer"],
+    supportedLngs: ["pl", "en", "ar"],
+
+    ns: ["common", "navbar", "home", "mainpage", "about", "offer"],
     defaultNS: "common",
+
     backend: {
-loadPath: "/locales/{{lng}}/{{ns}}.json"
+      loadPath: "/locales/{{lng}}/{{ns}}.json",
     },
+
+    detection: {
+      // ✅ First visit: always pl (unless user already chose language)
+      order: ["localStorage", "querystring", "navigator"],
+      lookupQuerystring: "lng",
+      caches: ["localStorage"],
+    },
+
     returnNull: false,
-    interpolation: { escapeValue: false }
+    interpolation: { escapeValue: false },
   });
 
 export default i18n;
