@@ -1,5 +1,3 @@
----
-
 # Willa Zofiówka – Full-Stack Booking Platform
 
 ![React](https://img.shields.io/badge/Frontend-React-61DAFB?logo=react\&logoColor=white)
