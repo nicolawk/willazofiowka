@@ -1,70 +1,247 @@
-# Getting Started with Create React App
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Willa Zofiówka – Full-Stack Booking Platform
 
-## Available Scripts
+![React](https://img.shields.io/badge/Frontend-React-61DAFB?logo=react\&logoColor=white)
+![Node.js](https://img.shields.io/badge/Backend-Node.js-339933?logo=node.js\&logoColor=white)
+![Express](https://img.shields.io/badge/API-Express-000000?logo=express\&logoColor=white)
+![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?logo=sqlite\&logoColor=white)
+![Vercel](https://img.shields.io/badge/Deployment-Vercel-000000?logo=vercel\&logoColor=white)
+![Railway](https://img.shields.io/badge/Backend%20Hosting-Railway-0B0D0E)
+![Cloudflare](https://img.shields.io/badge/Infrastructure-Cloudflare-F38020?logo=cloudflare\&logoColor=white)
+![Web3](https://img.shields.io/badge/Payments-Crypto%20Supported-6f42c1)
 
-In the project directory, you can run:
+Production-grade full-stack booking platform for a villa rental property in Zakopane, Poland.
 
-### `npm start`
+This project was independently designed, implemented, and deployed end-to-end.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Role & Ownership
 
-### `npm test`
+**Sole Developer – Full Stack & Infrastructure**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Responsibilities included:
 
-### `npm run build`
+* Full system architecture design
+* Frontend development (React)
+* Backend development (Node.js / Express)
+* Database design & logic
+* UI/UX design from scratch
+* Infrastructure configuration
+* Production deployment
+* API integrations
+* Ongoing maintenance and debugging
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The UI and UX were designed and implemented independently, without templates or external designers, focusing on clarity, booking flow simplicity, and performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Overview
 
-### `npm run eject`
+Willa Zofiówka is a production web application built to manage:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Direct bookings
+* Calendar synchronization
+* Crypto & traditional payments
+* Review aggregation
+* Secure guest data handling
+* Automated confirmations
+* Cloud-based deployment infrastructure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The platform replaces dependency on OTA-only workflows by providing a direct booking solution with integrated availability control.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Technology Stack
 
-## Learn More
+### Frontend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* React
+* React Router
+* i18next (multilingual support)
+* Custom CSS (independently designed UI/UX)
+* Deployed on Vercel
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Backend
 
-### Code Splitting
+* Node.js
+* Express
+* SQLite
+* Google Places API
+* iCal feed synchronization
+* SMTP email automation
+* Deployed on Railway
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Infrastructure
 
-### Analyzing the Bundle Size
+* Cloudflare DNS
+* Cloudflare R2 object storage
+* GitHub version control
+* CI-based deployment pipeline
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## System Architecture
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+React Client (Vercel)
+→ REST API
+→ Node.js / Express (Railway)
+→ SQLite Database
+→ iCal OTA Feeds
+→ Google Places API
+→ SMTP Email Service
+→ Cloudflare R2 (Media Hosting)
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Core Features
 
-### Deployment
+### 1. Custom Booking Engine
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* Date range validation
+* Server-side availability checks
+* Conflict prevention
+* Dynamic price calculation
+* Booking confirmation emails
+* Calendar persistence in database
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 2. OTA Calendar Synchronization
+
+* Imports external iCal feeds
+* Automatically blocks unavailable dates
+* Prevents double-booking conflicts
+* Maintains calendar integrity
+
+---
+
+### 3. Crypto Payment Support
+
+The platform supports cryptocurrency-based payments in addition to traditional booking confirmation flows.
+
+Features:
+
+* Blockchain transaction-based settlement
+* Transaction hash validation
+* Wallet transfer verification
+* Booking confirmation triggered upon transaction confirmation
+
+Blockchain transactions are linked to booking records for integrity verification.
+
+No personal guest data is stored on-chain.
+
+---
+
+### 4. Secure Data Handling
+
+Security considerations implemented:
+
+* Backend-only API key usage
+* Environment variable isolation
+* Server-side validation
+* Controlled access to booking data
+* Separation of payment validation and personal data storage
+
+Calendar records may be cryptographically associated with transaction hashes to ensure booking-payment integrity.
+
+---
+
+### 5. Google Reviews Integration
+
+* Server-side API proxy (`/api/reviews`)
+* Prevents frontend API key exposure
+* Fetches verified review data dynamically
+
+---
+
+### 6. Media Optimization
+
+* Large hero videos stored in Cloudflare R2
+* Served via dedicated media subdomain
+* Improves performance and repository cleanliness
+* Reduces frontend bundle size
+
+---
+
+## Environment Variables (Backend)
+
+```
+GOOGLE_PLACES_API_KEY=
+PLACE_ID=
+EMAIL_USER=
+EMAIL_PASS=
+CRYPTO_WALLET_ADDRESS=
+```
+
+Sensitive configuration is managed securely via Railway environment settings.
+
+---
+
+## Repository Structure
+
+```
+/client        React frontend
+/server        Express backend
+/database      SQLite storage
+/public        Static assets
+```
+
+---
+
+## Deployment Strategy
+
+### Frontend
+
+* Hosted on Vercel
+* Automatic deployment from GitHub
+
+### Backend
+
+* Hosted on Railway
+* Environment-based configuration
+* Production REST endpoints
+
+### Infrastructure
+
+* Domain via home.pl
+* DNS & routing via Cloudflare
+* Media served from:
+  [https://media.willazofiowka.pl](https://media.willazofiowka.pl)
+
+---
+
+## Engineering Challenges Addressed
+
+* Designing a full booking flow independently
+* Preventing double bookings across OTA platforms
+* Securely integrating third-party APIs
+* Blockchain transaction validation workflow
+* Separating media from application hosting
+* Managing production environment configuration
+* Maintaining full-stack deployment without SaaS booking tools
+
+---
+
+## Demonstrated Competencies
+
+* Full-stack JavaScript development
+* UI/UX system design
+* REST API architecture
+* Cloud deployment & CI/CD
+* Infrastructure management
+* Secure configuration handling
+* Blockchain-based payment validation integration
+* Independent production system ownership
+
+---
+
+## Author
+
+Nicola Wojcikowska
+Full-stack Developer
+
+This project was independently architected, designed (UI/UX), implemented, deployed, and maintained in a live production environment.
+
+---
