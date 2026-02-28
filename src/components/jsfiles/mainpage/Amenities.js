@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import "../../cssfiles/mainpage/Amenities.css";
 import am1 from "../../../assets/images/am1.jpg";
-import am2 from "../../../assets/images/sauna.jpg";
+import am2 from "../../../assets/images/ogrod.jpg";
 import am3 from "../../../assets/images/am3.jpg";
 import am4 from "../../../assets/images/am4.jpg";
 import { useTranslation } from "react-i18next";

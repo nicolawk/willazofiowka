@@ -1,5 +1,5 @@
 import "../../cssfiles/mainpage/Intro.css";
-import villaImg from "../../../assets/images/img1.jpg";
+import villaImg from "../../../assets/images/view.webp";
 import { useTranslation } from "react-i18next";
 
 const Intro = () => {
