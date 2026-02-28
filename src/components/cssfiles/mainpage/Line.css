@@ -7,7 +7,10 @@
   width:100%;
 }
 
-/* 3-dot luxury separator */
+/* hard-kill any leftover old element */
+.line{ display:none !important; }
+
+/* luxury separator: 3 burgundy dots */
 .line-container::before{
   content:"";
   width: 4px;
