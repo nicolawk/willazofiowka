@@ -85,7 +85,7 @@ const Footer = () => {
         <p>
           © 2025 Polka Apartments. {t("footer.bottom.text")}{" "}
           <a
-            href="https://www.instagram.com/nicolawojcikowska/"
+            href="https://www.linkedin.com/in/nicolaw%C3%B3jcikowska/"
             target="_blank"
             rel="noopener noreferrer"
           >
