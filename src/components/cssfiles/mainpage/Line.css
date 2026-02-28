@@ -3,27 +3,53 @@
   display:flex;
   justify-content:center;
   align-items:center;
-  padding: clamp(28px, 6vw, 80px) 0;
+  padding: clamp(32px, 7vw, 96px) 0;
   width:100%;
 }
 
+/* Luxury alpine marker */
 .line{
-  width: 1px;
-  height: clamp(70px, 11vw, 130px);
-  background: rgba(75,14,31,.55);
+  --burgundy: #4b0e1f;
+
+  width: 2px;
+  height: clamp(56px, 8vw, 96px);
+  border-radius: 99px;
+
+  /* soft fade (top/bottom) so it blends into the section */
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(75,14,31,.18) 18%,
+    rgba(75,14,31,.55) 50%,
+    rgba(75,14,31,.18) 82%,
+    transparent 100%
+  );
+
   position: relative;
-  opacity: .85;
+  opacity: .9;
 }
 
-.line::before{
+/* Minimal “mountain ridge” (tiny, not an arrow) */
+.line::after{
   content:"";
   position:absolute;
-  top:-6px;
   left:50%;
-  width: 10px;
-  height: 10px;
-  transform: translateX(-50%) rotate(45deg);
-  border-top: 1px solid rgba(75,14,31,.55);
-  border-left: 1px solid rgba(75,14,31,.55);
-  background: rgba(247,243,234,.85);
+  top:-10px;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 12px;
+
+  /* draw a small ridge with a clip-path */
+  background: rgba(75,14,31,.22);
+  clip-path: polygon(
+    0% 100%,
+    18% 72%,
+    34% 90%,
+    50% 40%,
+    66% 92%,
+    82% 70%,
+    100% 100%
+  );
+
+  filter: blur(.2px);
 }
