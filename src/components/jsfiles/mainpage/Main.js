@@ -24,8 +24,8 @@ const Main = () => {
         <PhotoSlider />
         <Ad/>
         <Amenities />
-        <Line/>
         <Feedback />
+        <Line/>
         <Maps />
         <Footer />
       </div>
