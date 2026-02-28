@@ -3,24 +3,40 @@
   display:flex;
   justify-content:center;
   align-items:center;
-  padding: clamp(18px, 4vw, 48px) 0;
+  padding: clamp(18px, 4vw, 56px) 0;
   width:100%;
 }
 
-/* hard-kill any leftover old element */
+/* kill any leftover old element */
 .line{ display:none !important; }
 
+/* Vertical luxury separator */
 .line-container::before{
   content:"";
-  width: min(180px, 46vw);
-  height: 1px;
+  width: 2px;
+  height: clamp(54px, 8vw, 92px);
+  border-radius: 999px;
+
+  /* elegant fade */
   background: linear-gradient(
-    90deg,
+    180deg,
     transparent 0%,
-    rgba(75,14,31,.35) 18%,
-    rgba(75,14,31,.80) 50%,
-    rgba(75,14,31,.35) 82%,
+    rgba(75,14,31,.18) 18%,
+    rgba(75,14,31,.60) 50%,
+    rgba(75,14,31,.18) 82%,
     transparent 100%
   );
+  opacity: .9;
+}
+
+/* subtle “waist” in the middle (luxury detail, not an icon) */
+.line-container::after{
+  content:"";
+  position: absolute;
+  width: 10px;
+  height: 10px;
   border-radius: 999px;
+  border: 1px solid rgba(75,14,31,.22);
+  background: rgba(247,243,234,.75);
+  backdrop-filter: blur(2px);
 }
