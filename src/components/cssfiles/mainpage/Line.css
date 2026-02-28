@@ -7,29 +7,23 @@
   width:100%;
 }
 
-/* Vertical luxury divider */
 .line{
   width: 1px;
-  height: clamp(64px, 10vw, 120px);
-  background: linear-gradient(
-    180deg,
-    transparent,
-    rgba(75,14,31,.75),
-    transparent
-  );
+  height: clamp(70px, 11vw, 130px);
+  background: rgba(75,14,31,.55);
   position: relative;
+  opacity: .85;
 }
 
-/* small “gem” in the center */
-.line::after{
+.line::before{
   content:"";
   position:absolute;
+  top:-6px;
   left:50%;
-  top:50%;
-  width:10px;
-  height:10px;
-  transform: translate(-50%, -50%) rotate(45deg);
-  border: 1px solid rgba(75,14,31,.55);
-  background: rgba(247,243,234,.70);
-  backdrop-filter: blur(2px);
+  width: 10px;
+  height: 10px;
+  transform: translateX(-50%) rotate(45deg);
+  border-top: 1px solid rgba(75,14,31,.55);
+  border-left: 1px solid rgba(75,14,31,.55);
+  background: rgba(247,243,234,.85);
 }
