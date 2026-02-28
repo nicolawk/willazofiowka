@@ -10,14 +10,17 @@
 /* hard-kill any leftover old element */
 .line{ display:none !important; }
 
-/* luxury separator: 3 burgundy dots */
 .line-container::before{
   content:"";
-  width: 4px;
-  height: 4px;
+  width: min(180px, 46vw);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(75,14,31,.35) 18%,
+    rgba(75,14,31,.80) 50%,
+    rgba(75,14,31,.35) 82%,
+    transparent 100%
+  );
   border-radius: 999px;
-  background: rgba(75,14,31,.75); /* #4b0e1f */
-  box-shadow:
-    -14px 0 0 rgba(75,14,31,.35),
-     14px 0 0 rgba(75,14,31,.35);
 }
