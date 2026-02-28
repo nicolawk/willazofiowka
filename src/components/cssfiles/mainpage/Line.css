@@ -3,21 +3,29 @@
   display:flex;
   justify-content:center;
   align-items:center;
-  padding: clamp(18px, 4vw, 56px) 0;
   width:100%;
-  position: relative; /* needed for ::after centering */
+  position: relative;
+
+  /* kontrolowana “przerwa” wokół separatora */
+  padding: clamp(18px, 3vmin, 36px) 0;
 }
 
 /* kill any leftover old element */
 .line{ display:none !important; }
 
-/* Vertical luxury separator (LONGER) */
+/* separator NIE wpływa na wysokość layoutu */
 .line-container::before{
   content:"";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
   width: 2px;
 
-  /* responsive to viewport height */
-height: clamp(110px, 28vh, 440px);
+  /* viewport-responsive, ale bez przesady */
+  height: clamp(140px, 22vmin, 420px);
+
   border-radius: 999px;
   background: linear-gradient(
     180deg,
@@ -28,9 +36,10 @@ height: clamp(110px, 28vh, 440px);
     transparent 100%
   );
   opacity: .9;
+  pointer-events: none;
 }
 
-/* Diamond “waist” in the middle */
+/* diamond w środku */
 .line-container::after{
   content:"";
   position: absolute;
@@ -38,12 +47,11 @@ height: clamp(110px, 28vh, 440px);
   top: 50%;
   width: 12px;
   height: 12px;
-
-  /* diamond shape */
   transform: translate(-50%, -50%) rotate(45deg);
 
-  border-radius: 2px; /* tiny rounding keeps it premium */
+  border-radius: 2px;
   border: 1px solid rgba(75,14,31,.22);
   background: rgba(247,243,234,.75);
   backdrop-filter: blur(2px);
+  pointer-events: none;
 }
