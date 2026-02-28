@@ -1,38 +1,35 @@
 .line-container{
-  background-color: rgba(247, 243, 234, 0.85);
+  background-color: rgba(247,243,234,.85);
   display:flex;
   justify-content:center;
   align-items:center;
-  padding: clamp(24px, 5vw, 64px) 0 clamp(16px, 3vw, 32px);
+  padding: clamp(28px, 6vw, 80px) 0;
   width:100%;
 }
 
-/* FIXED: true luxury hairline divider */
+/* Vertical luxury divider */
 .line{
-  display:block;
-  width: min(520px, 78vw);
-  height: 1px !important;
-  min-height: 1px !important;
-  max-height: 1px !important;
-
+  width: 1px;
+  height: clamp(64px, 10vw, 120px);
   background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(75,14,31,.55) 18%,
-    rgba(75,14,31,.95) 50%,
-    rgba(75,14,31,.55) 82%,
-    transparent 100%
-  ) !important;
-
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  opacity: .9;
+    180deg,
+    transparent,
+    rgba(75,14,31,.75),
+    transparent
+  );
+  position: relative;
 }
 
-/* If your element is <hr class="line">, browsers add defaults */
-hr.line{
-  margin: 0;
-  padding: 0;
-  border: none !important;
+/* small “gem” in the center */
+.line::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:10px;
+  height:10px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border: 1px solid rgba(75,14,31,.55);
+  background: rgba(247,243,234,.70);
+  backdrop-filter: blur(2px);
 }
