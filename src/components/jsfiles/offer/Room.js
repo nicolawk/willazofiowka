@@ -126,7 +126,7 @@ import { FaRulerCombined, FaBed, FaBath, FaDollarSign, FaCouch } from "react-ico
 import { useTranslation } from "react-i18next";
 import i18n from "../../../i18n";
 
-const BOOKING_URL = "https://your-booking-website.com";
+const BOOKING_URL = "https://book.willazofiowka.pl";
 
 /** Rooms: only IDs and images here; text comes from i18n */
 const rooms = [

@@ -46,7 +46,7 @@
     },
 
     "familyA": {
-      "title": "POKÓJ RODZINNY",
+      "title": "APARTAMENT RODZINNY",
       "location": "Parter, wyjście na taras",
       "size": "50 m²",
       "beds": "1",
@@ -55,7 +55,7 @@
       "price": "800 PLN / noc (2 osoby)"
     },
     "tatraSuite": {
-      "title": "APARTAMENT TATRY",
+      "title": "POKÓJ TATRZAŃŚKI",
       "location": "2. piętro, widok na miasto",
       "size": "45 m²",
       "beds": "1",
@@ -64,7 +64,7 @@
       "price": "850 PLN / noc (2 osoby)"
     },
     "deluxeGF": {
-      "title": "DELUXE JEDNOSYPIALNIANY",
+      "title": "APARTAMENT DELUXE",
       "location": "Parter, wyjście na taras",
       "size": "35 m²",
       "beds": "1",
@@ -72,7 +72,7 @@
       "price": "780 PLN / noc (2 osoby)"
     },
     "deluxeMF": {
-      "title": "DELUXE JEDNOSYPIALNIANY",
+      "title": "POKÓJ RODZINNY",
       "location": "2. piętro, widok na góry",
       "size": "35 m²",
       "beds": "1",
@@ -80,7 +80,7 @@
       "price": "760 PLN / noc (2 osoby)"
     },
     "familyB": {
-      "title": "POKÓJ RODZINNY",
+      "title": "DELUXE JEDYNKA",
       "location": "Parter, wyjście na taras",
       "size": "45 m²",
       "beds": "1",
