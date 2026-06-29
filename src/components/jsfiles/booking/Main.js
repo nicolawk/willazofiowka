@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import Intro from "./Intro";
 import Footer from "../mainpage/Footer";
 import Line from "../mainpage/Line";
-import BookingForm from "./Form";
+import BookingCalendar from "./BookingCalendar";
 import Maps from '../mainpage/Maps';
 import "../../cssfiles/booking/Main.css";
 
@@ -14,8 +14,8 @@ const Main5 = () => {
       <Nav />
       <Intro />
       <Line />
-      <BookingForm />
-      <Maps />
+      <BookingCalendar />
+      <Maps />  
       <Footer />
     </div>
   );
