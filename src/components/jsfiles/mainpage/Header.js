@@ -143,7 +143,7 @@ const Header = () => {
       <div className="header-content">
         <h2 className="header-text">{t("home:hero.title")}</h2>
         <p className="sub-head-text">{t("home:hero.subtitle")}</p>
-        <a href="/booking" className="book-now">
+        <a href="https://book.willazofiowka.pl/" className="book-now">
           {t("home:hero.book")}
         </a>
       </div>
