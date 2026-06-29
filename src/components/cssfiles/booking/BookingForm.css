@@ -5,11 +5,12 @@
 
 .booking-form-wrap {
   background: var(--bg);
-  min-height: auto;
+  min-height: 100dvh;
   padding: 90px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 /* Hide/neutralize old calendar container spacing */
