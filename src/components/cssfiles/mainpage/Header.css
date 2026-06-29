@@ -489,4 +489,26 @@ html[dir="rtl"] .lang-options { left: 0; right: auto; }
 }.nav-menu.active ~ .header-content,
 .nav-menu.active + .header-content {
   display: none;
+}/* MOBILE MENU MUST COVER HERO TEXT */
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    z-index: 99999 !important;
+  }
+
+  .nav-menu.active {
+    z-index: 99999 !important;
+  }
+
+  .header-content,
+  .header-text,
+  .sub-head-text,
+  .book-now {
+    z-index: 1 !important;
+  }
+
+  body:has(.nav-menu.active) .header-content {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
 }
