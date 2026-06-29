@@ -21,15 +21,32 @@ const BookingCalendar = ({
   };
 
   return (
-    <div className="bf-calendar">
-      <button
-        type="button"
-        className="bf-booking-button"
-        onClick={handleBookingRedirect}
-      >
-        Book Now
-      </button>
-    </div>
+    <section className="bf-booking-cta">
+      <div className="bf-booking-cta-inner">
+        <p className="bf-booking-eyebrow">Rezerwacja online</p>
+
+        <h2 className="bf-booking-title">
+          Zarezerwuj swój pobyt w Willi Zofiówka
+        </h2>
+
+        <p className="bf-booking-text">
+          Sprawdź dostępność pokoi, wybierz termin i dokończ rezerwację
+          bezpośrednio w naszym systemie rezerwacyjnym.
+        </p>
+
+        <button
+          type="button"
+          className="bf-booking-button"
+          onClick={handleBookingRedirect}
+        >
+          Zarezerwuj teraz
+        </button>
+
+        <p className="bf-booking-note">
+          Zostaniesz przeniesiony do bezpiecznej strony rezerwacji.
+        </p>
+      </div>
+    </section>
   );
 };
 

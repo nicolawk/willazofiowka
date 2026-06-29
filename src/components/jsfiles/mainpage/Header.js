@@ -1,4 +1,3 @@
-// Header.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import "../../cssfiles/mainpage/Header.css";
 import * as FaIcons from "react-icons/fa";
@@ -10,32 +9,33 @@ import i18n from "../../../i18n";
 
 const ALL_LANGS = ["en", "pl", "ar"];
 
-// ✅ R2 direct links (custom domain)
 const SUMMER_VIDEO_MP4 = "https://media.willazofiowka.pl/summer.mp4";
 const WINTER_VIDEO_MP4 = "https://media.willazofiowka.pl/winter.mp4";
 
-// optional poster (can be empty)
-const HERO_POSTER = ""; // e.g. "https://media.willazofiowka.pl/hero-poster.jpg"
+const HERO_POSTER = "";
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
   const [openLang, setOpenLang] = useState(false);
   const { t } = useTranslation(["navbar", "home", "common"]);
 
-  const showSidebar = () => setSidebar((s) => !s);
+  const openSidebar = () => setSidebar(true);
+  const closeSidebar = () => setSidebar(false);
 
   useEffect(() => {
-    let id;
-    const handleScroll = () => {
-      if (sidebar) {
-        clearTimeout(id);
-        id = setTimeout(() => setSidebar(false), 15);
+    document.body.style.overflow = sidebar ? "hidden" : "";
+
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        setSidebar(false);
       }
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("keydown", handleEscape);
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      clearTimeout(id);
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleEscape);
     };
   }, [sidebar]);
 
@@ -45,11 +45,8 @@ const Header = () => {
     setOpenLang(false);
   };
 
-  // ✅ choose video by season:
-  // Spring (Mar-May) + Summer (Jun-Aug) => summer.mp4
-  // Fall (Sep-Nov) + Winter (Dec-Feb) => winter.mp4
   const heroVideoSrc = useMemo(() => {
-    const m = new Date().getMonth() + 1; // 1..12
+    const m = new Date().getMonth() + 1;
     const isSpringOrSummer = m >= 3 && m <= 8;
     return isSpringOrSummer ? SUMMER_VIDEO_MP4 : WINTER_VIDEO_MP4;
   }, []);
@@ -61,7 +58,7 @@ const Header = () => {
     <div className="header-container" data-dir={i18n.dir()}>
       <div className="video-container">
         <video
-          key={heroVideoSrc}     // ✅ forces reload if src changes
+          key={heroVideoSrc}
           autoPlay
           loop
           muted
@@ -76,24 +73,43 @@ const Header = () => {
 
       <div className="navbar">
         <div className="menu">
-          <button className="menu-bars" aria-label="menu" onClick={showSidebar}>
+          <button className="menu-bars" aria-label="Open menu" onClick={openSidebar}>
             <FaIcons.FaBars />
           </button>
         </div>
 
+        <div
+          className={sidebar ? "nav-backdrop active" : "nav-backdrop"}
+          onClick={closeSidebar}
+        />
+
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items">
             <li className="navbar-toggle">
-              <button className="menu-bars" aria-label="close" onClick={() => setSidebar(false)}>
+              <button className="menu-bars" aria-label="Close menu" onClick={closeSidebar}>
                 <AiIcons.AiOutlineClose />
               </button>
             </li>
 
-            <li className="nav-text" onClick={() => setSidebar(false)}><Link to="/offer">{t("navbar:offer")}</Link></li>
-            <li className="nav-text" onClick={() => setSidebar(false)}><Link to="/booking">{t("navbar:booking")}</Link></li>
-            <li className="nav-text" onClick={() => setSidebar(false)}><Link to="/locations">{t("navbar:locations")}</Link></li>
-            <li className="nav-text" onClick={() => setSidebar(false)}><Link to="/aboutus">{t("navbar:about")}</Link></li>
-            <li className="nav-text" onClick={() => setSidebar(false)}><HashLink smooth to="/#reviews">{t("navbar:reviews")}</HashLink></li>
+            <li className="nav-text" onClick={closeSidebar}>
+              <Link to="/offer">{t("navbar:offer")}</Link>
+            </li>
+
+            <li className="nav-text" onClick={closeSidebar}>
+              <Link to="/booking">{t("navbar:booking")}</Link>
+            </li>
+
+            <li className="nav-text" onClick={closeSidebar}>
+              <Link to="/locations">{t("navbar:locations")}</Link>
+            </li>
+
+            <li className="nav-text" onClick={closeSidebar}>
+              <Link to="/aboutus">{t("navbar:about")}</Link>
+            </li>
+
+            <li className="nav-text" onClick={closeSidebar}>
+              <HashLink smooth to="/#reviews">{t("navbar:reviews")}</HashLink>
+            </li>
           </ul>
         </nav>
 
@@ -127,7 +143,9 @@ const Header = () => {
       <div className="header-content">
         <h2 className="header-text">{t("home:hero.title")}</h2>
         <p className="sub-head-text">{t("home:hero.subtitle")}</p>
-        <a href="/booking" className="book-now">{t("home:hero.book")}</a>
+        <a href="/booking" className="book-now">
+          {t("home:hero.book")}
+        </a>
       </div>
     </div>
   );
