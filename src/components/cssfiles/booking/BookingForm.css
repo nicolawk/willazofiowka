@@ -2,11 +2,10 @@
    BOOKING CTA — external booking website button
    Replaces old calendar look
 ========================================================= */
-
 .booking-form-wrap {
   background: var(--bg);
-  min-height: auto;
-  padding: 90px 20px;
+  min-height: 110vh;      /* 10% taller than viewport */
+  padding: 0 20px;        /* remove top/bottom padding */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,15 +17,12 @@
   width: 100%;
   margin: 0;
 }
-
-/* Main CTA section */
 .bf-booking-cta {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
-  background: transparent;
-  height: 100vh;
+  align-items: center;
+  padding: 0;
 }
 
 /* Elegant card */
@@ -35,6 +31,8 @@
   width: 100%;
   max-width: 760px;
   text-align: center;
+    flex: 0 0 auto;
+  height: fit-content;
   padding: 56px 42px 52px;
   border-radius: 28px;
   background:
