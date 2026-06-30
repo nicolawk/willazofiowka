@@ -525,20 +525,21 @@ html[dir="rtl"] .lang-options { left: 0; right: auto; }
     pointer-events: none !important;
   }
 }
-@media screen and (max-width: 768px) {
-  .navbar {
-    padding: 1rem 1.25rem;
-  }
-
-  .title {
-    top: 28px;
-    font-size: 3rem;
-  }
+/* Hide top nav after scrolling */
+.navbar {
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-@media screen and (max-width: 480px) {
-  .title {
-    top: 30px;
-    font-size: 2.45rem;
-  }
+.navbar > .menu,
+.navbar > .title,
+.navbar > .lang-dropdown {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.navbar.nav-hidden > .menu,
+.navbar.nav-hidden > .title,
+.navbar.nav-hidden > .lang-dropdown {
+  opacity: 0;
+  transform: translateY(-30px);
+  pointer-events: none;
 }

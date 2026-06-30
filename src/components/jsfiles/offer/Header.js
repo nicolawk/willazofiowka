@@ -12,24 +12,32 @@ const ALL_LANGS = ["en", "pl", "ar"];
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
   const [openLang, setOpenLang] = useState(false);
+  const [navHidden, setNavHidden] = useState(false);
   const { t } = useTranslation(["navbar", "about", "common","booking"]);
 
   const showSidebar = () => setSidebar((s) => !s);
 
-  useEffect(() => {
-    let timeoutId;
-    const handleScroll = () => {
-      if (sidebar) {
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => setSidebar(false), 15);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+useEffect(() => {
+  let timeoutId;
+
+  const handleScroll = () => {
+    const shouldHide = window.scrollY > 80;
+    setNavHidden(shouldHide);
+
+    if (sidebar) {
       clearTimeout(timeoutId);
-    };
-  }, [sidebar]);
+      timeoutId = setTimeout(() => setSidebar(false), 15);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  handleScroll();
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+    clearTimeout(timeoutId);
+  };
+}, [sidebar]);
 
   // keep <html> lang/dir in sync on mount
   useEffect(() => {
@@ -54,7 +62,7 @@ const Header = () => {
       {/* Background image */}
       <div className="image-background" />
 
-      <div className="navbar">
+      <div className={`navbar ${navHidden && !sidebar ? "nav-hidden" : ""}`}>
         <div className="menu">
           <button className="menu-bars" aria-label="menu" onClick={showSidebar}>
             <FaIcons.FaBars />
