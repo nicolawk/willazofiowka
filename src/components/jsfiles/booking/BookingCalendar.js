@@ -1,11 +1,14 @@
 import React from "react";
 import "../../cssfiles/booking/BookingForm.css";
+import { useTranslation } from "react-i18next";
 
 const BookingCalendar = ({
   initialCheckIn,
   initialCheckOut,
   bookingUrl = "https://book.willazofiowka.pl",
 }) => {
+  const { t } = useTranslation("booking");
+
   const handleBookingRedirect = () => {
     const url = new URL(bookingUrl);
 
@@ -21,30 +24,33 @@ const BookingCalendar = ({
   };
 
   return (
-    <section className="bf-booking-cta">
-      <div className="bf-booking-cta-inner">
-        <p className="bf-booking-eyebrow">Rezerwacja online</p>
+    <section className="booking-form-wrap">
+      <div className="bf-booking-cta">
+        <div className="bf-booking-cta-inner">
+          <p className="bf-booking-eyebrow">
+            {t("cta.eyebrow")}
+          </p>
 
-        <h2 className="bf-booking-title">
-          Zarezerwuj swój pobyt w Willi Zofiówka
-        </h2>
+          <h2 className="bf-booking-title">
+            {t("cta.title")}
+          </h2>
 
-        <p className="bf-booking-text">
-          Sprawdź dostępność pokoi, wybierz termin i dokończ rezerwację
-          bezpośrednio w naszym systemie rezerwacyjnym.
-        </p>
+          <p className="bf-booking-text">
+            {t("cta.text")}
+          </p>
 
-        <button
-          type="button"
-          className="bf-booking-button"
-          onClick={handleBookingRedirect}
-        >
-          Zarezerwuj teraz
-        </button>
+          <button
+            type="button"
+            className="bf-booking-button"
+            onClick={handleBookingRedirect}
+          >
+            {t("cta.button")}
+          </button>
 
-        <p className="bf-booking-note">
-          Zostaniesz przeniesiony do bezpiecznej strony rezerwacji.
-        </p>
+          <p className="bf-booking-note">
+            {t("cta.note")}
+          </p>
+        </div>
       </div>
     </section>
   );
