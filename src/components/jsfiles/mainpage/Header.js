@@ -17,6 +17,7 @@ const HERO_POSTER = "";
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
   const [openLang, setOpenLang] = useState(false);
+  const [navHidden, setNavHidden] = useState(false);
   const { t } = useTranslation(["navbar", "home", "common"]);
 
   const openSidebar = () => setSidebar(true);
@@ -38,6 +39,28 @@ const Header = () => {
       window.removeEventListener("keydown", handleEscape);
     };
   }, [sidebar]);
+
+  useEffect(() => {
+  const handleScroll = () => {
+    const scrollTop =
+      window.scrollY ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+
+    setNavHidden(scrollTop > 80);
+  };
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  document.addEventListener("scroll", handleScroll, { passive: true });
+
+  handleScroll();
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+    document.removeEventListener("scroll", handleScroll);
+  };
+}, []);
 
   const switchLang = (lng) => {
     i18n.changeLanguage(lng);
@@ -71,7 +94,7 @@ const Header = () => {
         </video>
       </div>
 
-      <div className="navbar">
+      <div className={`navbar ${navHidden && !sidebar ? "nav-hidden" : ""}`}>        
         <div className="menu">
           <button className="menu-bars" aria-label="Open menu" onClick={openSidebar}>
             <FaIcons.FaBars />
