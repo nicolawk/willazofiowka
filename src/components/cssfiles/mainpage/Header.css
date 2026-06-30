@@ -542,4 +542,6 @@ html[dir="rtl"] .lang-options { left: 0; right: auto; }
   opacity: 0 !important;
   transform: translateY(-35px) !important;
   pointer-events: none !important;
+}.nav-menu {
+  overflow-y: auto;
 }

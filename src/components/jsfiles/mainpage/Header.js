@@ -23,23 +23,43 @@ const Header = () => {
   const openSidebar = () => setSidebar(true);
   const closeSidebar = () => setSidebar(false);
 
-  useEffect(() => {
-    document.body.style.overflow = sidebar ? "hidden" : "";
+useEffect(() => {
+  const closeOnEscape = (e) => {
+    if (e.key === "Escape") {
+      setSidebar(false);
+    }
+  };
 
-    const handleEscape = (e) => {
-      if (e.key === "Escape") {
-        setSidebar(false);
-      }
-    };
+  const closeOnScroll = () => {
+    if (sidebar) {
+      setSidebar(false);
+    }
+  };
 
-    window.addEventListener("keydown", handleEscape);
+  const closeOnWheel = () => {
+    if (sidebar) {
+      setSidebar(false);
+    }
+  };
 
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", handleEscape);
-    };
-  }, [sidebar]);
+  const closeOnTouchMove = () => {
+    if (sidebar) {
+      setSidebar(false);
+    }
+  };
 
+  window.addEventListener("keydown", closeOnEscape);
+  window.addEventListener("scroll", closeOnScroll, { passive: true });
+  window.addEventListener("wheel", closeOnWheel, { passive: true });
+  window.addEventListener("touchmove", closeOnTouchMove, { passive: true });
+
+  return () => {
+    window.removeEventListener("keydown", closeOnEscape);
+    window.removeEventListener("scroll", closeOnScroll);
+    window.removeEventListener("wheel", closeOnWheel);
+    window.removeEventListener("touchmove", closeOnTouchMove);
+  };
+}, [sidebar]);
   useEffect(() => {
   const handleScroll = () => {
     const scrollTop =
@@ -94,7 +114,7 @@ const Header = () => {
         </video>
       </div>
 
-      <div className={`navbar ${navHidden && !sidebar ? "nav-hidden" : ""}`}>        
+      <div className="navbar">        
         <div className="menu">
           <button className="menu-bars" aria-label="Open menu" onClick={openSidebar}>
             <FaIcons.FaBars />
