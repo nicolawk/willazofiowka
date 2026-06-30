@@ -1,7 +1,11 @@
 {
+  "brand": "Willa Zofiówka",
+  "introSubtitle": "ZAPLANUJ SWÓJ POBYT W WILLI ZOFIÓWKA",
+  "introTitle": "Zarezerwuj swój wypoczynek w Tatrach",
+  "introText": "Poczuj ciepło i autentyczną atmosferę Zakopanego w miejscu, gdzie regionalna tradycja łączy się z subtelnym luksusem. Zarezerwuj wybrany apartament bezpośrednio u nas, aby otrzymać najlepszą cenę i indywidualną obsługę — Twój górski wypoczynek czeka w Willi Zofiówka. Ceny mogą się różnić w zależności od dostępności, liczby osób dorosłych/dzieci oraz długości pobytu. Każda rezerwacja bezpośrednia otrzymuje 20% rabatu.",
+  "introButton": "Zobacz Nasze Pokoje", 
   "temporaryTitle": "Rezerwacja tymczasowo niedostępna",
-  "temporaryTechnicalIssues": "Nadal pracujemy nad stroną internetową i obecnie występują pewne problemy techniczne. Rezerwacja online będzie ponownie dostępna wkrótce. Jeśli są Państwo zainteresowani rezerwacją, prosimy o kontakt pod: +48 534 778 477 lub anita@polkaapartments.com",
-
+  "temporaryTechnicalIssues": "Nadal pracujemy nad stroną internetową i obecnie występują pewne problemy techniczne. Rezerwacja online będzie ponownie dostępna wkrótce. Jeśli są państwo zainteresowani rezerwacją prosimy o kontakt pod: +48 534 778 477 lub anita@polkaapartments.com",
   "cta": {
     "eyebrow": "Rezerwacja online",
     "title": "Zarezerwuj swój pobyt w Willi Zofiówka",
@@ -9,5 +13,4 @@
     "button": "Zarezerwuj teraz",
     "note": "Zostaniesz przeniesiony do bezpiecznej strony rezerwacji."
   }
-
 }

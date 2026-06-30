@@ -1,6 +1,17 @@
-{ 
+{
+  "brand": "Willa Zofiówka",
+  "headerTitle": "BOOKING",
+  "title": "Request a Reservation",
+  "subtitle": "Choose your apartment, dates, and add your details. You’ll receive a confirmation by email.",
+
+  "introSubtitle": "PLAN YOUR STAY AT WILLA ZOFIÓWKA",
+  "introTitle": "Book your escape to the Tatra Mountains",
+  "introText": "Experience the warmth and authenticity of Zakopane in a setting where regional tradition meets understated luxury. Reserve your preferred suite directly with us for the best available rates and personal service — your alpine retreat awaits at Willa Zofiówka. Prices may vary. Prices are based on availability, number of adults/children, and the duration of your stay. Every direct reservation gets 20% off.",
+  "introButton": "Discover Our Rooms",
+
   "temporaryTitle": "Booking temporarily unavailable",
   "temporaryTechnicalIssues": "We are still working on the website and are currently experiencing some technical issues. Online booking will be available again soon. If you are intrested in booking, please contact +48 534 778 477 or anita@polkaapartments.com",
+
   "cta": {
     "eyebrow": "Online booking",
     "title": "Book your stay at Willa Zofiówka",
